@@ -1,0 +1,159 @@
+特点：
+   1、操作简单，入门容易
+   2、支持跨平台操作(Window、Linux、MacOS)
+   3、支持版本回退功能(时间机器)
+
+获取SVN软件：
+   SVN属于C/S结构软件(客户端与服务端)
+   服务端软件：VisualSVN
+   客户端软件：Tortoisesvn
+
+SVN的工作流程：
+   1、第一次与SVN服务器进行链接操作并更新项目中的数据到本地的过程使用checkout指令(检出)
+   2、非第一次更新数据到本地使用update指令(更新)
+   3、数据上传到SVN服务器的项目中使用commit指令(提交)
+   4、SVN的地址：svn://相关地址
+
+SVN服务端配置：
+   1、创建一个项目：
+       1)首先在SVN服务器端创建一个公有目录WebApp做为项目
+       2)在WebApp目录下创建项目文件夹，做为版本仓库
+       3)创建版本仓库，DOS环境基本语法：
+           svnadmin create 项目文件夹路径
+
+进行服务器监管：
+   svn://localhost或(ip地址)访问到相关数据仓库
+   基本语法：
+       svnserve -d(后台运行) -r(监管目录) 版本仓库路径
+       通过以上指令，我们的svn://localhost或ip地址就可以直接指向项目版本仓库
+
+权限控制：
+   默认情况下，SVN服务器是不允许匿名用户上传文件到服务器端的，所以必须更改项目的相关配置文件
+	     打开在项目仓库下的conf文件夹里的svnserve.conf文件，把第19行代码(# anon-access=read)改为anno-access=write
+	     read是可读不可写，write是可读可写
+
+使用客户端软件连接SVN服务器：
+   首先在项目目录鼠标右键-->TortoiseSVN-->版本库浏览器-->输入SVN服务器地址(如：svn://localhost(SVN服务器地址))
+    
+SVN图标集：
+   1)常规图标
+   	    含义：当客户端文件与服务器端文件完全同步时，系统显示该图标
+   2)冲突图标
+      	含义：当客户端提交的文件与服务器端数据有冲突，系统显示该图标
+   3)删除图标
+   	    含义：当服务器端数据已删除，那么客户端该文件将显示该图标
+   4)增加图标
+      	含义：当我们编写文件已添加到提交队列，那么系统将自动显示该图标
+   5)五版本控制图标
+	      含义：当我们编写的文件没有添加到上传队列时，系统将自动显示该图标
+   6)修改图标
+   	    含义：当客户端文件有修改但未提交，此时将自动显示该图标
+   7)只读图标
+   	    含义：当客户端文件以只读形式存在时，将自动显示该图标
+   8)锁定图标
+   	    含义：当服务器端数据已锁定，那么客户端文件将自动显示锁定图标
+   9)忽略图标
+      	含义：客户端文件已忽略，不需要进行提交上传，那么将自动显示忽略图标
+
+忽略功能：
+   有些文件不希望上传至svn服务器，应该将该文件或该类型的文件添加至忽略列表
+
+
+版本回退功能：
+   1)在项目空白处鼠标右键，选择更新至版本
+   2)根据日志进行版本回退
+   3)根据日志信息选择回退的状态
+
+版本冲突：
+   在实际项目开发中，如果两个人同时修改某个文件就会产生版本冲突问题。
+   解决办法：
+   	 1)合理分配项目开发时间
+	   2)合理分配项目开发模块
+	   3)通过SVN解决版本冲突问题（分4步）：
+	        1、更新服务器端数据到本地
+	        如修改index.php文件提交时发送版本冲突，更新数据后会出现冲突的index.php文件,index.php.mine,index.php,index.php.r7
+	    	      index.php:整合后的index.php文件
+		          index.php.mine:后修改的人修改后的index.php文件
+		          index.php.r6:前修改的人更新时的index.php(起始状态)
+		          index.php.r7:前修改的人修改后的index.php文件
+		          r后面数值小的时起始文件
+	        2、删除除index.php以外的其他三个文件
+	        3、修改整合index.php冲突文件
+	        4、重新提交数据到SVN服务器端，即可解决版本冲突问题
+
+配置多仓库与权限控制：
+   1、配置多仓库
+   	  通过svnserve进行仓库监管，但是监管指令只能监管某一个文件夹，而不能同时监管多个仓库
+	    可以通过监管WebApp总目录来达到监管所有仓库的目的
+	        语法：svnserve -d(后台运行) -r(监管目录) WebApp(项目总目录)
+	        如：打开DOS窗口，输入svnserve -d -r D:/svn/WebApp指令
+	            可以通过svn://localhost或ip地址来访问D:/svn/WebApp目录
+		          如果需要访问WebApp目录下的Shop项目、WeChat项目,分别如下
+		              Shop项目：svn://localhost/Shop
+		              WeChat项目：svn://localhost/WeChat
+
+   2、权限控制：
+   	    如果要使用权限控制有一个前提：必须首先开启权限功能
+	      在每一个仓库中都有一个conf文件，里面有三个文件：
+	          authz文件：授权文件(告诉哪些用户有哪些权限)
+	          passwd文件：认证文件(标识当前svn系统中某个仓库具有哪些用户以及相应的密码)
+	          默认情况下,以上两个文件都是禁用的,如需要使用，首先要开启以上两个文件
+	          svnserve.conf配置文件
+	          开启步骤如下：
+		            1)开口svnserve.conf配置文件，注释匿名用户的可读可写权限(把文件的19行注释起来)
+		            2)开启认证文件与授权文件(svnserve.conf)
+		                把27行password-db=passwd和36行authz-db=authz的注释去掉
+		            3)编写认证文件定义相关用户名与密码
+		                打开passwd文件，users是选项，在users下面添加用户名和密码，左边是用户名，右边是密码
+		                如admin=admin888，admin是用户名，admin888是该用户的密码
+	            	4)编写授权文件
+		                打开authz文件,需要对授权用户进行分组操作,配置组信息([groups]),左边是组名,右边是用户列表，用户与用户直接用逗号隔开
+		                有了组之后,授权程序：
+		                    1、配置相关项目例如Shop项目
+			  	                  [Shop:/]代表Shop项目下我们具有相关的权限
+			                  2、创建分组信息
+			  	                  @admin=rw(代表admin组具有可读可写权限)
+				                    *=r(代表匿名用户只有可读权限)
+		            5)测试
+
+配置自启动服务：
+    sc create SVNService binpath= "D:\SvnServer\bin\svnserve.exe --service -r D:/SvnServer/WebApp" start= auto
+    步骤：
+    	1)打开运行，输入cmd指令，打开DOS环境(请使用超级管理员运行)
+	    2)输入上面的指令
+	    3)查看系统服务
+	        通过控制面板->管理工具->服务，启动SVNService服务
+
+创建批处理文件
+    启动、停止、删除服务的指令如下：
+	      启动服务：net start 服务名称
+	      停止服务：net stop 服务名称
+	      删除服务：sc delete 服务名称
+    开启SVNService服务的批处理文件
+    	  新建一个后缀名为bat的文件，如start.bat，然后在文件里写上net start SVNService指令(代表开启SVNService服务)
+    停止SVNService服务的批处理文件
+    	  新建一个后缀名为bat的文件，如stop.bat，然后在文件里写上net stop SVNService指令(代表停止SVNService服务)
+    删除SVNService服务的批处理文件
+    	  新建一个后缀名为bat的文件，如delete.bat，然后在文件里写上sc delete SVNService指令(代表删除SVNService服务)
+
+钩子程序：
+    所谓钩子就是与一些版本库事件触发的程序，例如新修订版本的创建，或是未版本化属性的修改。
+    默认情况下,钩子的子目录(版本仓库/hooks/)中包含各种版本库钩子模板。
+    post-commit.tmpl:事务完成后所触发的钩子程序
+    钩子程序默认情况可以采用批处理指令或Shell指令来进行编写
+
+    通过批处理指令编写钩子程序：
+    	  1)指定svn服务端工作目录
+	           设置服务器端SVN路径：SET SVN="D:\SvnServer\bin\svn.exe" 
+	      2)指定Web服务器工作目录
+	           设置服务器端项目运行目录：SET DIR="D:\Program Files\apache-tomcat-8.5.40\webapps\Shop"
+	      3)通过update指令实时更新数据到DIR目录中：SVN update %DIR%
+	      4)具体使用步骤：
+	           第一步：复制post-commit.tmpl为post-commit.bat文件
+	           第二步：填入相关批处理指令(上面1、2、3点的指令)
+	           第三步：在apache目录创建Shop项目并更新SVN服务端数据到本地
+	           第四步：更新文件到SVN服务器端，可以在Shop目录实时获取到最新数据
+	           第五步：可以通过虚拟主机形式直接访问更新文件
+
+anon-access=read指：允许匿名用户读取该资源库
+auth-access=write指：允许授权用户对该资源库执行读取、写入操作
