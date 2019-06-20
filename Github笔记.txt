@@ -1,144 +1,144 @@
-�������
-    �ֿ�(Repository):
-	�ֿ����������Ŀ���룬ÿ����Ŀ��Ӧһ���ֿ⣬�����Դ��Ŀ���ж���ֿ�
-    �ղ�(Star):
-    	�ղ���Ŀ�������´β鿴
-    ���ƿ�¡��Ŀ(Fork):
-    	Fork���԰ѱ��˵Ĳֿ����������ĸ��Ƶ��Լ���github���棬����fork�Ĳֿ��Ƕ������ڵ�һ���ֿ�
-    ��������(Pull Request):
-    	Fork���˵Ĳֿ�󣬸òֿ������仯����Ҫ��Fork����Ҳ�ı䣬�Ϳ�������˷�������
-    ��ע(Watch):
-    	���Watch��ĳ����Ŀ����ô�Ժ�ֻҪ�����Ŀ���κθ��£������һʱ���յ����������Ŀ��֪ͨ����
-    ����Ƭ(Issue):
-    	���ִ���BUG������Ŀǰû�г��ʹ��룬��Ҫ����ʱ�û�����������
-    Description:��Ŀ����
-	Initialize this repository with a README:�ڲֿ��¶�һ��readme��˵���ļ�������ϸ������Ŀ
-    �ֿ���ҳ˵����
-    	1��Edit��ť����������޸���Ŀ����
-    	2��Create new file��ť�������ļ�
-    	3��Upload files��ť���ϴ��ļ�
-    	4��Find file��ť�������ֿ��ļ�
-    	5��Clone or download��ť��ֱ�����ػ���ͨ��git��¡
-    ������ҳ��ʾ(your profile)��
-	ͷ���û���������ʱ�䣬��ע����Ŀ����ע���û����ֿ����Ϣ
+基本概念：
+    仓库(Repository):
+	仓库用来存放项目代码，每个项目对应一个仓库，多个开源项目则有多个仓库
+    收藏(Star):
+    	收藏项目，方便下次查看
+    复制克隆项目(Fork):
+    	Fork可以把别人的仓库完完整整的复制到自己的github里面，而且fork的仓库是独立存在的一个仓库
+    发起请求(Pull Request):
+    	Fork别人的仓库后，该仓库有所变化，想要被Fork的人也改变，就可以向该人发起请求
+    关注(Watch):
+    	如果Watch了某个项目，那么以后只要这个项目有任何更新，都会第一时间收到关于这个项目的通知提醒
+    事务卡片(Issue):
+    	发现代码BUG，但是目前没有成型代码，需要讨论时用或给出解决方案
+    Description:项目描述
+	Initialize this repository with a README:在仓库下多一个readme的说明文件，来详细描述项目
+    仓库主页说明：
+    	1、Edit按钮，点击可以修改项目描述
+    	2、Create new file按钮，创建文件
+    	3、Upload files按钮，上传文件
+    	4、Find file按钮，搜索仓库文件
+    	5、Clone or download按钮，直接下载或者通过git克隆
+    个人主页显示(your profile)：
+	头像，用户名，加入时间，关注的项目，关注的用户，仓库等信息
 
-ע�������Ҫע��ĵ㣺
-    1����ΪGitHub�ڹ�����������Է��ʽ������޷����ʣ���Ҫͨ����ǽ(��ǽ������Shadowsocks)
-    2��˽�вֿ�ֻ���Լ�����ָ�����Ѳ���Ȩ�޲���(˽�вֿ����շѵ�)
-    3����ע����û�������֤�����ſ��Դ���git�ֿ�
+注册过程中要注意的点：
+    1、因为GitHub在国外服务器所以访问较慢或无法访问，需要通过翻墙(翻墙软件：Shadowsocks)
+    2、私有仓库只能自己或者指定朋友才有权限操作(私有仓库是收费的)
+    3、新注册的用户必须验证邮箱后才可以创建git仓库
 
-qq������Ҫ���ð����������յ��ʼ������裺
-    1����qq����������
-    2�����������
-    3�������������������
-    4������ҳ���input��������github.com,Ȼ�������Ӽ���
+qq邮箱需要设置白名单才能收到邮件，步骤：
+    1、打开qq邮箱点击设置
+    2、点击反垃圾
+    3、点击设置域名白名单
+    4、在新页面的input框中输入github.com,然后点击添加即可
 
-�޸��ļ���
-    ����ļ����������ļ�����ҳ�棬����ʵ�ͼ�ν����޸��ļ����޸��ļ����ύ��ʽ�͵�һ���ύ�ļ�һ��
+修改文件：
+    点击文件名，进入文件详情页面，点击笔的图形进行修改文件，修改文件的提交方式和第一次提交文件一样
 
-ɾ���ļ���
-    ����ļ����������ļ�����ҳ�棬�������Ͱ��ͼ�����ɾ���ļ�
-    ɾ������ļ����ڲֿ��commits�����ҵ���Ӧ�ļ��������ȥ���ܿ����ļ�����ϸ��Ϣ
+删除文件：
+    点击文件名，进入文件详情页面，点击垃圾桶的图标进行删除文件
+    删除后的文件，在仓库的commits里面找到对应文件，点击进去就能看该文件的详细信息
 
-upload file:�ϴ��ļ�(��ݼ���t)
+upload file:上传文件(快捷键是t)
 
-��Դ��Ŀ�������̣�
-    1���½�Issue
-	�ύʹ��������߽�������뷨
-    2��Pull Request
-	���裺
-	   1��fork��Ŀ
-	   2���޸��Լ��ֿ����Ŀ����
-	   3���½� pull request
-	   4���ȴ�ԭ�����߲������
+开源项目贡献流程：
+    1、新建Issue
+	提交使用问题或者建议或者想法
+    2、Pull Request
+	步骤：
+	   1、fork项目
+	   2、修改自己仓库的项目代码
+	   3、新建 pull request
+	   4、等待原开发者操作审核
 
-Git��װ��ʹ�ã�
-    Ŀ�ģ�
-	ͨ��git����GitHub�й���Ŀ����
-    ���ذ�װ��
-	1��Git�������أ�https://www.git-scm.com/download/win
-    	2��˫����װ
-    	   next->ѡ��װ�Ĺ���Ŀ¼->next->ѡ�����(Git Bash Here������ģʽ��Git GUI Hereͼ�н���)Ĭ����һ��->
-	   ���ÿ�ʼ�˵�Ŀ¼����(Ĭ����һ��)->ѡ��ʹ�������л���(Use Git from Git Bash only)->����Ķ�Ĭ��next
+Git安装和使用：
+    目的：
+	通过git管理GitHub托管项目代码
+    下载安装：
+	1、Git官网下载：https://www.git-scm.com/download/win
+    	2、双击安装
+    	   next->选择安装的工作目录->next->选择组件(Git Bash Here命令行模式，Git GUI Here图行界面)默认下一步->
+	   设置开始菜单目录名称(默认下一步)->选择使用命令行环境(Use Git from Git Bash only)->后面的都默认next
 
-Git�����������̣�
-    Git��������
-	Git Repository(Git�ֿ�)
-	   ����ȷ�����ļ����浽�ֿ⣬��Ϊһ���µİ汾�����Ҷ����˿ɼ�
-	�ݴ���
-	   �ݴ��Ѿ��޸ĵ��ļ����ͳһ�ύ��git�ֿ���
-	������(Working Directory)
-	   ���ӡ��༭���޸��ļ��ȶ���
-    ��ֿ��������ļ����̣�
-	��git status������鿴�ļ���״̬(�����ݴ��������ڹ�����������Git�ֿ�)
-	��git add �ļ���(�к�׺��)��������ļ��ύ���ݴ���
-	��git commit -m �ύ������������ļ����ݴ����ύ��Git�ֿ�
+Git基本工作流程：
+    Git工作区域：
+	Git Repository(Git仓库)
+	   最终确定的文件保存到仓库，成为一个新的版本，并且对他人可见
+	暂存区
+	   暂存已经修改的文件最后统一提交到git仓库中
+	工作区(Working Directory)
+	   添加、编辑、修改文件等动作
+    向仓库中添加文件流程：
+	“git status”命令，查看文件的状态(是在暂存区还是在工作区还是在Git仓库)
+	“git add 文件名(有后缀名)”命令，把文件提交到暂存区
+	“git commit -m 提交描述”命令，把文件从暂存区提交到Git仓库
 
-Git��ʼ�����ֿⴴ���Ͳ�����
-	Git�������ã�
-	   Git��װ���֮����Ҫ����һЩ������Ϣ����
-	   1�������û���
-		git config -global user.name '�û���'
-	   2�������û�������
-		git config -global user.email '�����ַ'
-	   3���鿴����
+Git初始化及仓库创建和操作：
+	Git基础设置：
+	   Git安装完成之后，需要进行一些基本信息设置
+	   1、设置用户名
+		git config -global user.name '用户名'
+	   2、设置用户名邮箱
+		git config -global user.email '邮箱地址'
+	   3、查看设置
 		git config --list
-	   ע�⣺git config -global ���������������������ʾ����̨���������е�Git�ֿⶼ��ʹ��������ã���ȻҲ����
-	   ��ĳ���ֿ�ָ���Ĳ�ͬ���û��������䡣
+	   注意：git config -global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以
+	   对某个仓库指定的不同的用户名和邮箱。
 	
-	��ʼ��һ���µ�Git�ֿ⣺
-	   1�������ļ���
-		mkdir �ļ�������
-	   2�����ļ��ڳ�ʼ��git(����git�ֿ�)
-		cd �ļ�������
+	初始化一个新的Git仓库：
+	   1、创建文件夹
+		mkdir 文件夹名称
+	   2、在文件内初始化git(创建git仓库)
+		cd 文件夹名称
 		git init
 
-	ɾ���ļ���
-	   1��ɾ���ļ�
-		rm -rf �ļ���(�к�׺��)
-	   2����Git��ɾ���ļ�
-		git rm �ļ���(�к�׺��)
-	   3���ύ����
-		git commit -m '�ύ����'
+	删除文件：
+	   1、删除文件
+		rm -rf 文件名(有后缀名)
+	   2、从Git中删除文件
+		git rm 文件名(有后缀名)
+	   3、提交操作
+		git commit -m '提交描述'
 
-Git����Զ�ֿ̲⣺
-	ʹ��Զ�ֿ̲��Ŀ�ģ�
-	   ���ã����ݣ�ʵ�ִ��빲�����л�����
-	�����زֿ�ͬ����gitԶ�ֿ̲��У�
-	   ��git push����������زֿ��ύ��Զ��
-	�����git push������
+Git管理远程仓库：
+	使用远程仓库的目的：
+	   作用：备份，实现代码共享集中化管理
+	将本地仓库同步到git远程仓库中：
+	   “git push”命令，将本地仓库提交到远程
+	解决“git push”错误：
 	    vi .git/config
-	    ��[remote "origin"]
-		url=https://github.com/�û���/�ֿ���.git
-	    �޸�Ϊ��
+	    将[remote "origin"]
+		url=https://github.com/用户名/仓库名.git
+	    修改为：
 		[remote "origin"]
-		url=https://�û���������@github.com/�û���/�ֿ���.git
+		url=https://用户名：密码@github.com/用户名/仓库名.git
 
-Git��¡������
-	Ŀ�ģ�
-	   ��Զ�ֿ̲�(GitHub��Ӧ����Ŀ)���Ƶ�����
-	���
-	   git clone �ֿ��ַ
-	�ֿ��ַ��������
-	   ��GitHub�ġ�Clone or download������
+Git克隆操作：
+	目的：
+	   将远程仓库(GitHub对应的项目)复制到本地
+	命令：
+	   git clone 仓库地址
+	仓库地址的由来：
+	   在GitHub的“Clone or download”里面
 
-Github Pages ���վ;
-	����վ�㣺
-	   ���ʣ�
-		https://�û���.github.io
-	   ����裺
-		1����������վ��(�½��ֿ�//ע���ֿ���������[�û���.github.io])
-		2���ڲֿ����½�index.html���ļ�����
-	   ע�⣺
-		1��GitHub pages��֧�־�̬��ҳ
-		2���ֿ�����ֻ����.html�ļ�
+Github Pages 搭建网站;
+	个人站点：
+	   访问：
+		https://用户名.github.io
+	   搭建步骤：
+		1、创建个人站点(新建仓库//注：仓库名必须是[用户名.github.io])
+		2、在仓库下新建index.html的文件即可
+	   注意：
+		1、GitHub pages仅支持静态网页
+		2、仓库里面只能是.html文件
 
-	Project Pages��Ŀվ�㣺
-	   ���ʣ�
-		https://�û���.github.io/�ֿ���
-	   ����裺
-		1��������Ŀ��ҳ�����setting
-		2����settingҳ�棬�����Launch automatic page generator�����Զ���������ҳ��
-		3���½�վ�������Ϣ����
-		4��ѡ������
-		5��������ҳ
+	Project Pages项目站点：
+	   访问：
+		https://用户名.github.io/仓库名
+	   搭建步骤：
+		1、进入项目主页，点击setting
+		2、在setting页面，点击“Launch automatic page generator”来自动生成主题页面
+		3、新建站点基础信息设置
+		4、选择主题
+		5、生成网
